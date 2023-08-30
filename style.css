@@ -4,8 +4,8 @@
     font-style: normal;
     /* Браузер сначала попробует найти шрифт локально */
     src: local("TTLakes-Regular"),
-    url("/font/TTLakes-Regular.woff") format("woff"),
-    url("/font/TTLakes-Regular.ttf") format("ttf");
+    url("./font/TTLakes-Regular.woff") format("woff"),
+    url("./font/TTLakes-Regular.ttf") format("ttf");
 }
 
 @font-face{
@@ -14,8 +14,8 @@
     font-style: normal;
     /* Браузер сначала попробует найти шрифт локально */
     src: local("TTLakes-Bold"),
-    url("/font/TTLakes-Bold.woff") format("woff"),
-    url("/font/TTLakes-Bold.ttf") format("ttf");
+    url("./font/TTLakes-Bold.woff") format("woff"),
+    url("./font/TTLakes-Bold.ttf") format("ttf");
 }
 
 @font-face{
@@ -24,8 +24,8 @@
     font-style: normal;
     /* Браузер сначала попробует найти шрифт локально */
     src: local("TTLakes-Medium"),
-    url("/font/TTLakes-Medium.woff") format("woff"),
-    url("/font/TTLakes-Medium.ttf") format("ttf");
+    url("./font/TTLakes-Medium.woff") format("woff"),
+    url("./font/TTLakes-Medium.ttf") format("ttf");
 }
 /*--шрифты--*/
 
@@ -109,7 +109,7 @@ h1 {
     font-size: 28px;
     font-style: normal;
     font-weight: 700;
-    line-height: 40px; /* 142.857% */
+    line-height: 40px;
     letter-spacing: -0.6px;
 }
 
