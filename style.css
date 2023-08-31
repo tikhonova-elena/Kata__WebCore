@@ -146,6 +146,13 @@ header {
     margin-right: 16px;
 }
 
+.title {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    max-width: 100%;
+    justify-content: flex-start;
+}
 
 h1 {
     justify-content: flex-start;
@@ -155,7 +162,6 @@ h1 {
     font-weight: 700;
     line-height: 40px;
     letter-spacing: -0.6px;
-    margin: 24px auto 24px 16px;
 }
 
 .title__highlight {
