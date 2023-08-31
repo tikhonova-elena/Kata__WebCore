@@ -125,7 +125,6 @@ h1 {
     width: 100%;
     padding: 0 0 10px 0;
     overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
 }
 
 .menu__item {
@@ -183,8 +182,11 @@ h1 {
     font-weight: 400;
     line-height: 20px; /* 142.857% */
     letter-spacing: 0.2px;
-    height: 95px;
     overflow: hidden;
+}
+
+.description__text p:not(:first-child) {
+    display: none;
 }
 
 .description__text p:not(:last-child){
@@ -213,7 +215,6 @@ h1 {
     min-height: 110px;
     background-image: url("./img/banner.png");
     background-size: cover;
-    background-clip: border-box;
     margin-top: 16px;
 }
 
@@ -226,14 +227,17 @@ h1 {
         min-height: 208px;
     }
 
-    .description__text {
-        height: 180px;
+    .description__text p:nth-of-type(2) {
+        display: block;
     }
 }
 
 @media (min-width: 1120px) {
     .menu {
         justify-content: flex-start;
+    }
+    .description__text p:nth-of-type(-n+3) {
+        display: block;
     }
 }
 
@@ -242,7 +246,7 @@ h1 {
         min-height: 307px;
     }
 
-    .description__text {
-        height: 100%;
+    .description__text p:nth-of-type(n) {
+        display: block;
     }
 }
