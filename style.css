@@ -57,11 +57,7 @@ aside {
     padding: 24px 0 16px 16px;
     border-bottom: 1px solid #D9FFF5;
     background: #FFF;
-    margin-bottom: 24px;
 }
-
-
-
 
 
 .header__left {
@@ -77,6 +73,7 @@ aside {
     vertical-align: center;
     background: #FFF;
 }
+
 
 .header__right span{
     display: none;
@@ -94,6 +91,12 @@ aside {
 
 .header__right_visible span{
     background-color: #F8F8F8;
+}
+
+.header__visible {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: center;
 }
 
 .header__search,
@@ -338,8 +341,7 @@ h1 {
         display: none;
     }
 
-    .header__visible  {
+    .header__right_visible {
         display: flex;
-        justify-content: space-between;
     }
 }
