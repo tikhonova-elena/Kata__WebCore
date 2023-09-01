@@ -60,9 +60,9 @@ aside {
     margin-bottom: 24px;
 }
 
-.header__visible {
-    display: none;
-}
+
+
+
 
 .header__left {
     display: flex;
@@ -88,6 +88,7 @@ aside {
 }
 
 .header__right_visible {
+    display: none;
     background-color: #F8F8F8;
 }
 
