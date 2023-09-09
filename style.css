@@ -69,7 +69,7 @@ svg {
     width: 100%;
     height: 100%;
     opacity: 0.9;
-    z-index: 0;
+    z-index: 1;
 }
 
 
@@ -287,6 +287,11 @@ svg {
 
 /* banner */
 
+main {
+    position: relative;
+    z-index: 0;
+}
+
 .title,
 .description__text,
 .description__read-more,
@@ -502,6 +507,12 @@ h1 {
 @media (min-width: 1440px) {
     main {
         margin-left: 320px;
+    }
+    .fog-of-war {
+        display: none;
+    }
+    .aside__pop-up {
+        box-shadow: none;
     }
 }
 
