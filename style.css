@@ -140,9 +140,9 @@ svg {
     color: #7E7E82;
 }
 
-.aside-menu__contacts {
-    display: flex;
+.aside__footer__contacts {
     justify-content: flex-start;
+    gap: 16px;
 }
 
 .aside__footer {
@@ -251,8 +251,8 @@ svg {
     padding-right: 16px;
 }
 
-.header__search,
-.header__settings {
+.search,
+.settings {
     display: flex;
     flex-direction: row;
     align-items: center;
