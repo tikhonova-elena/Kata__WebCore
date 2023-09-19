@@ -51,7 +51,7 @@ ul {
     background-color: inherit;
 }
 
-.button {
+button {
     padding: 0;
     border: none;
     font: inherit;
@@ -60,23 +60,50 @@ ul {
     cursor: pointer;
 }
 
-svg {
+svg,
+img {
     background: transparent;
 }
 
 .fog-of-war {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0.9;
+    width: 100vw;
+    height: 100vh;
     z-index: 1;
+    opacity: 0;
 }
 
+.read-more {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    z-index: 40;
+}
 
+.read-more__open img{
+    transform: rotate(180deg);
+}
 
 /* aside-left */
 
+
 .aside-left {
+    position: relative;
+    left: -100%;
+    transition: left 0.8s linear;
+    box-shadow: none;
+}
+
+.aside-left__visible {
+    left: 0;
+}
+
+.fog-of-war__visible {
+    opacity: 0.9;
+    transition: opacity 0.5s linear 0.8s;
 }
 
 .aside__pop-up {
@@ -84,9 +111,9 @@ svg {
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    position: absolute;
-    background-color: #FFFFFF;
     height: 100%;
+    position:fixed;
+    background-color: #FFFFFF;
     box-shadow: 16px 0 52px 0 rgba(14, 24, 80, 0.20);
     z-index: 1;
 }
@@ -207,7 +234,7 @@ svg {
     max-width: 100%;
     justify-content: space-between;
     vertical-align: center;
-    padding: 24px 16px 16px 16px;
+    padding: 24px 0 16px 16px;
     border-bottom: 1px solid #D9FFF5;
     background: #FFF;
 }
@@ -224,6 +251,7 @@ svg {
     justify-content: space-between;
     vertical-align: center;
     background: #FFF;
+    padding-right: 16px;
 }
 
 .header__right span{
@@ -248,7 +276,6 @@ svg {
     display: flex;
     justify-content: space-between;
     vertical-align: center;
-    padding-right: 16px;
 }
 
 .search,
@@ -284,22 +311,20 @@ svg {
 
 
 
-
-/* banner */
-
 main {
     position: relative;
     z-index: 0;
 }
 
-.title,
-.description__text,
-.description__read-more,
-.menu__item:first-child
-{
-    margin-left: 16px;
-    margin-right: 16px;
+
+/* banner */
+
+.banner {
+    margin-bottom: 50px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
+
 
 .title {
     margin-top: 24px;
@@ -347,7 +372,6 @@ h1 {
     letter-spacing: -0.2px;
 }
 
-
 .menu__item:first-child a{
     margin-left: 0;
 }
@@ -362,21 +386,15 @@ h1 {
     border: 2px solid #B8FFEC;
     background-color: #FFF;
 }
-
-.menu-wrapper__fade-right {
-    position: absolute;
-    right: 0;
-    width: 24px;
-    height: 40px;
+.fade {
     background: linear-gradient(270deg, #F8F8F8 0.04%, rgba(248, 248, 248, 0.00) 100%);
+    position: absolute;
 }
 
-.menu-wrapper__fade-left {
-    position: absolute;
-    left: 0;
+.menu-wrapper__fade-right {
+    right: 16px;
     width: 24px;
     height: 40px;
-    background: linear-gradient(90deg, #F8F8F8 0.04%, rgba(248, 248, 248, 0.00) 100%);
 }
 
 .description {
@@ -386,11 +404,13 @@ h1 {
 
 .description__text {
     margin-top: 24px;
+    margin-bottom: 16px;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
     overflow: hidden;
+
 }
 
 .description__text p:not(:first-child) {
@@ -401,17 +421,9 @@ h1 {
     margin-bottom: 10px;
 }
 
-.description__read-more {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: -0.2px;
-    margin-top: 16px;
-}
+
+
+
 
 .description__container {
     display: flex;
@@ -428,10 +440,125 @@ h1 {
 }
 
 
+/* Brands */
+
+.brands {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+
+h2 {
+    display: block;
+    padding: 16px;
+    background: linear-gradient(90deg, #F8F8F8 0%, #FFF 98.61%);
+    color: #7E7E82;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    border-top: 2px solid #D9FFF5;
+}
+
+.companies {
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.companies__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #FFF;
+    border-radius: 6px;
+    border: 1px solid #EAEAEA;
+    width: 240px;
+    height: 72px;
+    padding: 16px;
+}
+
+.companies__item img {
+    max-width: 130px;
+    max-height: 52px;
+}
+
+.swiper-pagination {
+    position:relative;
+    margin-top: 16px;
+    z-index: 3;
+}
+
+.brands__fade {
+    content: "";
+    position: absolute;
+    height: 100px;
+    width: 24px;
+    background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.00) 100%);
+    right: 0;
+    z-index: 15;
+}
+
+.brands__read-more {
+    display: none;
+    margin-left: 16px;
+    margin-top: 16px;
+}
+
+/* equipment-repair */
+
+.equipment-repair {
+    margin-bottom: 50px;
+}
+
+.technique {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+    overflow: scroll;
+}
+
+.technique__item {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: #FFF;
+    border-radius: 6px;
+    border: 1px solid #EAEAEA;
+    min-width: 224px;
+    height: 160px;
+    padding: 16px;
+}
+
+.technique__item p {
+    background-color: #FFF;
+    font-weight: 500;
+}
+
+.technique__item .open {
+    align-self: flex-end;
+}
+
+.equipment-repair__read-more {
+    display: none;
+    margin-left: 16px;
+}
+
 
 @media (max-width: 768px) {
     .header__middle {
         display: none;
+    }
+
+    .aside__pop-up {
+        box-shadow: none;
     }
 }
 
@@ -463,6 +590,27 @@ h1 {
     .aside__pop-up {
         max-width: 320px;
     }
+
+    .companies {
+        display: grid;
+        grid-template-columns: repeat(3, 240px);
+        grid-template-rows: repeat(3, 1fr);
+        height: 170px;
+        overflow: hidden;
+    }
+    .companies__open {
+        height: 250px;
+    }
+
+    .swiper-pagination {
+        display: none;
+    }
+
+    .brands__read-more,
+    .equipment-repair__read-more {
+        display: flex;
+    }
+
 }
 
 @media (min-width: 1120px) {
@@ -502,17 +650,26 @@ h1 {
         padding-top: 40px;
     }
 
-}
-
-@media (min-width: 1440px) {
     main {
         margin-left: 320px;
     }
-    .fog-of-war {
+    .fog-of-war,
+    .aside-menu__burger {
         display: none;
     }
     .aside__pop-up {
         box-shadow: none;
     }
+    .aside-left {
+        left: 0;
+        transition: left 0.3s linear;
+    }
+
 }
 
+@media (min-width: 1440px) {
+    .companies {
+        grid-template-columns: repeat(4, 240px);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
