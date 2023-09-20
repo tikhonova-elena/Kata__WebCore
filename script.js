@@ -49,10 +49,6 @@ readMoreBrands.addEventListener('click', () => {
 
 
 
-
-
-
-
 //swiper
 
 /*    const swiper = new Swiper('.swiper', {
