@@ -553,6 +553,14 @@ h2 {
 }
 
 
+
+@media (min-width: 400px) {
+    .aside__pop-up {
+        max-width: 320px;
+    }
+}
+
+
 @media (max-width: 768px) {
     .header__middle {
         display: none;
@@ -588,9 +596,7 @@ h2 {
         display: flex;
     }
 
-    .aside__pop-up {
-        max-width: 320px;
-    }
+
 
     .companies {
         display: grid;

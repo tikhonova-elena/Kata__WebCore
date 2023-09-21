@@ -120,7 +120,7 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     resizableSwiper(
-        '(max-width: 768px)',
+        '(max-width: 766px)',
         '.swiper',
         {
             loop: true,
@@ -129,7 +129,7 @@ window.addEventListener('DOMContentLoaded', () => {
             },
             breakpoints: {
                 0: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                     enabled: true,
                 },
                 320: {
